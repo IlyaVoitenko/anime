@@ -1,12 +1,19 @@
 import "./App.css";
-import Home from "./components/Home";
+import { lazy } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Layout from "./components/Layout";
+
+const HomePage = lazy(() => import("./pages/Home"));
+const TopAnimePage = lazy(() => import("./pages/TopAnimePage"));
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Layout />}>
+          <Route index element={<HomePage />} />
+          <Route path="/top-anime" element={<TopAnimePage />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   );

@@ -2,9 +2,9 @@ import { NavLink } from "react-router-dom";
 import { Navbar } from "flowbite-react";
 import { Button } from "@material-tailwind/react";
 
-const Header = () => {
+const Header = ({ isBlackLinks = false }) => {
   return (
-    <Navbar className="z-10 fixed top-0 w-screen bg-inherit ">
+    <Navbar className="z-10 fixed left-0 top-0 right-0 w-screen  bg-inherit ">
       <Navbar.Brand>
         <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
           Anime
@@ -22,28 +22,39 @@ const Header = () => {
           className={({ isActive }) =>
             isActive
               ? "bg-amber-600 text-black sm:bg-inherit sm:text-amber-700 hover:sm:text-amber-900"
-              : "bg-black  sm:bg-inherit text-white sm:text-black hover:sm:text-amber-900 "
+              : ` ${
+                  isBlackLinks
+                    ? "bg-black  sm:bg-inherit text-white sm:text-black hover:sm:text-amber-900"
+                    : "bg-white  sm:bg-inherit text-white sm:text-white hover:sm:text-amber-900"
+                }`
           }
         >
           Home
         </NavLink>
         <NavLink
-          to="/about"
-          activeClassName=""
+          to="/top-anime"
           className={({ isActive }) =>
             isActive
               ? "bg-amber-600 text-black sm:bg-inherit sm:text-amber-700 hover:sm:text-amber-900"
-              : "bg-black  sm:bg-inherit text-white sm:text-black hover:sm:text-amber-900 "
+              : ` ${
+                  isBlackLinks
+                    ? "bg-black  sm:bg-inherit text-white sm:text-black hover:sm:text-amber-900"
+                    : "bg-white  sm:bg-inherit text-white sm:text-white hover:sm:text-amber-900"
+                }`
           }
         >
-          About
+          Top anime
         </NavLink>
         <NavLink
           to="/Services"
           className={({ isActive }) =>
             isActive
               ? "bg-amber-600 text-black sm:bg-inherit sm:text-amber-700 hover:sm:text-amber-900"
-              : "bg-black  sm:bg-inherit text-white sm:text-black hover:sm:text-amber-900 "
+              : ` ${
+                  isBlackLinks
+                    ? "bg-black  sm:bg-inherit text-white sm:text-black hover:sm:text-amber-900"
+                    : "bg-white  sm:bg-inherit text-white sm:text-white hover:sm:text-amber-900"
+                }`
           }
         >
           Services
@@ -53,7 +64,11 @@ const Header = () => {
           className={({ isActive }) =>
             isActive
               ? "bg-amber-600 text-black sm:bg-inherit sm:text-amber-700 hover:sm:text-amber-900"
-              : "bg-black  sm:bg-inherit text-white sm:text-black hover:sm:text-amber-900 "
+              : ` ${
+                  isBlackLinks
+                    ? "bg-black  sm:bg-inherit text-white sm:text-black hover:sm:text-amber-900"
+                    : "bg-white  sm:bg-inherit text-white sm:text-white hover:sm:text-amber-900"
+                }`
           }
         >
           Pricing
@@ -63,7 +78,11 @@ const Header = () => {
           className={({ isActive }) =>
             isActive
               ? "bg-amber-600 text-black sm:bg-inherit sm:text-amber-700 hover:sm:text-amber-900"
-              : "bg-black  sm:bg-inherit text-white sm:text-black hover:sm:text-amber-900 "
+              : ` ${
+                  isBlackLinks
+                    ? "bg-black  sm:bg-inherit text-white sm:text-black hover:sm:text-amber-900"
+                    : "bg-white  sm:bg-inherit text-white sm:text-white hover:sm:text-amber-900"
+                }`
           }
         >
           Contact
