@@ -2,9 +2,13 @@ import { NavLink } from "react-router-dom";
 import { Navbar } from "flowbite-react";
 import { Button } from "@material-tailwind/react";
 
-const Header = ({ isBlackLinks = false }) => {
+const Header = ({ isBlackLinksColors = false, isBlock = false }) => {
   return (
-    <Navbar className="z-10 fixed left-0 top-0 right-0 w-screen  bg-inherit ">
+    <Navbar
+      className={`z-10  left-0 top-0 right-0 w-screen  bg-inherit ${
+        isBlock ? "block " : "fixed"
+      }`}
+    >
       <Navbar.Brand>
         <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
           Anime
@@ -23,9 +27,9 @@ const Header = ({ isBlackLinks = false }) => {
             isActive
               ? "bg-amber-600 text-black sm:bg-inherit sm:text-amber-700 hover:sm:text-amber-900"
               : ` ${
-                  isBlackLinks
+                  isBlackLinksColors
                     ? "bg-black  sm:bg-inherit text-white sm:text-black hover:sm:text-amber-900"
-                    : "bg-white  sm:bg-inherit text-white sm:text-white hover:sm:text-amber-900"
+                    : "bg-black   sm:bg-inherit text-white sm:text-white hover:sm:text-amber-900"
                 }`
           }
         >
@@ -37,9 +41,9 @@ const Header = ({ isBlackLinks = false }) => {
             isActive
               ? "bg-amber-600 text-black sm:bg-inherit sm:text-amber-700 hover:sm:text-amber-900"
               : ` ${
-                  isBlackLinks
+                  isBlackLinksColors
                     ? "bg-black  sm:bg-inherit text-white sm:text-black hover:sm:text-amber-900"
-                    : "bg-white  sm:bg-inherit text-white sm:text-white hover:sm:text-amber-900"
+                    : "bg-black   sm:bg-inherit text-white sm:text-white hover:sm:text-amber-900"
                 }`
           }
         >
@@ -51,9 +55,9 @@ const Header = ({ isBlackLinks = false }) => {
             isActive
               ? "bg-amber-600 text-black sm:bg-inherit sm:text-amber-700 hover:sm:text-amber-900"
               : ` ${
-                  isBlackLinks
+                  isBlackLinksColors
                     ? "bg-black  sm:bg-inherit text-white sm:text-black hover:sm:text-amber-900"
-                    : "bg-white  sm:bg-inherit text-white sm:text-white hover:sm:text-amber-900"
+                    : "bg-black   sm:bg-inherit text-white sm:text-white hover:sm:text-amber-900"
                 }`
           }
         >
@@ -65,9 +69,9 @@ const Header = ({ isBlackLinks = false }) => {
             isActive
               ? "bg-amber-600 text-black sm:bg-inherit sm:text-amber-700 hover:sm:text-amber-900"
               : ` ${
-                  isBlackLinks
+                  isBlackLinksColors
                     ? "bg-black  sm:bg-inherit text-white sm:text-black hover:sm:text-amber-900"
-                    : "bg-white  sm:bg-inherit text-white sm:text-white hover:sm:text-amber-900"
+                    : "bg-black  sm:bg-inherit text-white sm:text-white hover:sm:text-amber-900"
                 }`
           }
         >
@@ -79,9 +83,9 @@ const Header = ({ isBlackLinks = false }) => {
             isActive
               ? "bg-amber-600 text-black sm:bg-inherit sm:text-amber-700 hover:sm:text-amber-900"
               : ` ${
-                  isBlackLinks
+                  isBlackLinksColors
                     ? "bg-black  sm:bg-inherit text-white sm:text-black hover:sm:text-amber-900"
-                    : "bg-white  sm:bg-inherit text-white sm:text-white hover:sm:text-amber-900"
+                    : "bg-black  sm:bg-inherit text-white sm:text-white hover:sm:text-amber-900"
                 }`
           }
         >

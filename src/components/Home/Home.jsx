@@ -16,7 +16,7 @@ const Home = () => {
   return (
     <section>
       <div className="relative">
-        <Header isBlackLinks={true} />
+        <Header isBlackLinksColors={true} />
         <MainPoster />
       </div>
       <PreviewTopAnime />

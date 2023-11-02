@@ -1,8 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { setTopAnime } from "../thunk";
+import { setTopAnime, setAnimeById } from "../thunk";
 
 const initialState = {
-  topAnime: null,
+  topAnimeList: null,
+  currentAnime: null,
 };
 
 export const animeSlice = createSlice({
@@ -10,15 +11,18 @@ export const animeSlice = createSlice({
   initialState,
   extraReducers: (builder) => {
     builder.addCase(setTopAnime.fulfilled, (state, action) => {
-      state.topAnime = [...action.payload];
+      state.topAnimeList = [...action.payload];
     });
     builder.addCase(setTopAnime.rejected, () => {
       throw Error(500);
     });
+    builder.addCase(setAnimeById.fulfilled, (state, action) => {
+      state.currentAnime = action.payload;
+    });
+    builder.addCase(setAnimeById.rejected, () => {
+      throw Error("anime not found", 404);
+    });
   },
-  reducers: {},
 });
-
-// export const {} = animeSlice.actions;
 
 export default animeSlice.reducer;
