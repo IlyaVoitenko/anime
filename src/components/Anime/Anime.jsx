@@ -2,7 +2,8 @@ import { useSelector } from "react-redux";
 import { currentAnimeSelector } from "../../store/selectors";
 import Poster from "./Poster";
 import Header from "../Header";
-
+import Description from "./Description";
+import Player from "./Player";
 const Anime = () => {
   const anime = useSelector(currentAnimeSelector);
   console.log(anime);
@@ -13,13 +14,13 @@ const Anime = () => {
       <Poster image={images?.jpg.large_image_url} alt={title_english} />
       <div className=" flex flex-col items-center">
         <div className="w-[70%] mt-10">
-          <div className="flex flex-col mt-10">
-            <div className="text-2xl ">
-              <span>{title_english}</span> |{" "}
-              <span className="text-yellow-400">{score}</span>
-            </div>
-            <p className="mt-5">{synopsis}</p>
-          </div>
+          {" "}
+          <Description
+            title_english={title_english}
+            score={score}
+            synopsis={synopsis}
+          />
+          <Player />
         </div>
       </div>
     </div>
