@@ -1,5 +1,9 @@
 import { useDispatch } from "react-redux";
-import { setAnimeById } from "../../store/thunk";
+import {
+  setAnimeById,
+  setAuthorAnime,
+  setAnimeTrailer,
+} from "../../store/thunk";
 import { Link } from "react-router-dom";
 
 const ListTopAnime = ({ list }) => {
@@ -12,7 +16,11 @@ const ListTopAnime = ({ list }) => {
             key={anime.mal_id}
             to={"/anime"}
             className="text-white flex justify-evenly items-center  mt-5"
-            onClick={() => dispatch(setAnimeById(anime.mal_id))}
+            onClick={() => {
+              dispatch(setAnimeById(anime.mal_id));
+              dispatch(setAuthorAnime(anime.mal_id));
+              dispatch(setAnimeTrailer(anime.mal_id));
+            }}
           >
             <div className="flex flex-col mr-2 ml-2 w-6/12 sm:w-[14vw] text-center mt-5 mb-5 items-center">
               <img

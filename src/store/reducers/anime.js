@@ -1,9 +1,16 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { setTopAnime, setAnimeById } from "../thunk";
+import {
+  setTopAnime,
+  setAnimeById,
+  setAuthorAnime,
+  setAnimeTrailer,
+} from "../thunk";
 
 const initialState = {
   topAnimeList: null,
   currentAnime: null,
+  animeAuthor: null,
+  animeTrailer: null,
 };
 
 export const animeSlice = createSlice({
@@ -21,6 +28,18 @@ export const animeSlice = createSlice({
     });
     builder.addCase(setAnimeById.rejected, () => {
       throw Error("anime not found", 404);
+    });
+    builder.addCase(setAuthorAnime.fulfilled, (state, action) => {
+      state.animeAuthor = { ...action.payload };
+    });
+    builder.addCase(setAuthorAnime.rejected, () => {
+      throw Error("anime author is not found", 404);
+    });
+    builder.addCase(setAnimeTrailer.fulfilled, (state, action) => {
+      state.animeTrailer = { ...action.payload };
+    });
+    builder.addCase(setAnimeTrailer.rejected, () => {
+      throw Error("anime trailer is not found", 404);
     });
   },
 });

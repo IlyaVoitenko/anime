@@ -1,30 +1,31 @@
 import ReactPlayer from "react-player";
+import { animeTrailerSelector } from "../../../store/selectors";
+import { useSelector } from "react-redux";
 
 const Player = () => {
+  const animeTrailer = useSelector(animeTrailerSelector);
+  const { music_videos, promo } = animeTrailer.data;
   return (
-    <div className="mt-5">
+    <div className="mt-5 ">
       <ReactPlayer
-        url="https://cdn.flowplayer.com/a30bd6bc-f98b-47bc-abf5-97633d4faea0/hls/de3f6ca7-2db3-4689-8160-0f574a5996ad/playlist.m3u8"
+        url={
+          promo.length === 0
+            ? music_videos[0].video.embed_url
+            : promo[0].trailer.embed_url
+        }
         controls={true}
         width="100%"
-        height="auto"
+        height="500px"
         config={{
           file: {
             attributes: {
-              controlsList: "nodownload", // Отключить скачивание
+              controlsList: "nodownload",
             },
-            tracks: [],
             forceDASH: true, // Включить поддержку DASH
           },
         }}
         playing={false}
         playbackRate={1.0}
-        onReady={() => console.log("Video is ready")}
-        onPlay={() => console.log("Video is playing")}
-        onPause={() => console.log("Video is paused")}
-        onEnded={() => console.log("Video has ended")}
-        onError={(error) => console.error("Video error:", error)}
-        onSeek={(seconds) => console.log("Seeked to:", seconds)}
       />
     </div>
   );

@@ -6,3 +6,5 @@ export const topAnimeListReselect = createSelector(
   (product) => product
 );
 export const currentAnimeSelector = (state) => state.anime.currentAnime;
+export const animeAuthorSelector = (state) => state.anime.animeAuthor;
+export const animeTrailerSelector = (state) => state.anime.animeTrailer;
