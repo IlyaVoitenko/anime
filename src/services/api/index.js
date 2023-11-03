@@ -18,3 +18,9 @@ export const loadTrailerAnime = async (id) => {
   );
   return data;
 };
+export const loadRecommendedAnime = async (id) => {
+  const { data } = await axios.get(
+    `https://api.jikan.moe/v4/anime/${id}/recommendations`
+  );
+  return data.data;
+};

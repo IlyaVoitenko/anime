@@ -16,7 +16,7 @@ const Loading = () => {
           />
         </svg>
 
-        <div>Loading ...</div>
+        <div className="text-white">Loading ...</div>
       </div>
     </div>
   );

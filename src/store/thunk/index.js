@@ -3,6 +3,7 @@ import {
   loadAnimeById,
   loadAuthorById,
   loadTrailerAnime,
+  loadRecommendedAnime,
 } from "../../services/api";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
@@ -28,7 +29,6 @@ export const setAnimeById = createAsyncThunk(
     }
   }
 );
-
 export const setAuthorAnime = createAsyncThunk(
   "anime/setAuthorAnime",
   async (params, apiThunk) => {
@@ -45,6 +45,17 @@ export const setAnimeTrailer = createAsyncThunk(
   async (params, apiThunk) => {
     try {
       const data = await loadTrailerAnime(params);
+      return data;
+    } catch (error) {
+      apiThunk.rejectWithValue(error.message);
+    }
+  }
+);
+export const setRecommendedAnime = createAsyncThunk(
+  "anime/setRecommendedAnime",
+  async (params, apiThunk) => {
+    try {
+      const data = await loadRecommendedAnime(params);
       return data;
     } catch (error) {
       apiThunk.rejectWithValue(error.message);

@@ -10,6 +10,7 @@ const Home = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    console.log("started");
     dispatch(setTopAnime());
   }, [dispatch]);
 
