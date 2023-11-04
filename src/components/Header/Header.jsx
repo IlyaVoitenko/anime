@@ -49,48 +49,6 @@ const Header = ({ isBlackLinksColors = false, isBlock = false }) => {
         >
           Top anime
         </NavLink>
-        <NavLink
-          to="/Services"
-          className={({ isActive }) =>
-            isActive
-              ? "bg-amber-600 text-black sm:bg-inherit sm:text-amber-700 hover:sm:text-amber-900"
-              : ` ${
-                  isBlackLinksColors
-                    ? "bg-black  sm:bg-inherit text-white sm:text-black hover:sm:text-amber-900"
-                    : "bg-black   sm:bg-inherit text-white sm:text-white hover:sm:text-amber-900"
-                }`
-          }
-        >
-          Services
-        </NavLink>
-        <NavLink
-          to="/Pricing"
-          className={({ isActive }) =>
-            isActive
-              ? "bg-amber-600 text-black sm:bg-inherit sm:text-amber-700 hover:sm:text-amber-900"
-              : ` ${
-                  isBlackLinksColors
-                    ? "bg-black  sm:bg-inherit text-white sm:text-black hover:sm:text-amber-900"
-                    : "bg-black  sm:bg-inherit text-white sm:text-white hover:sm:text-amber-900"
-                }`
-          }
-        >
-          Pricing
-        </NavLink>
-        <NavLink
-          to="/Contact"
-          className={({ isActive }) =>
-            isActive
-              ? "bg-amber-600 text-black sm:bg-inherit sm:text-amber-700 hover:sm:text-amber-900"
-              : ` ${
-                  isBlackLinksColors
-                    ? "bg-black  sm:bg-inherit text-white sm:text-black hover:sm:text-amber-900"
-                    : "bg-black  sm:bg-inherit text-white sm:text-white hover:sm:text-amber-900"
-                }`
-          }
-        >
-          Contact
-        </NavLink>
       </Navbar.Collapse>
     </Navbar>
   );

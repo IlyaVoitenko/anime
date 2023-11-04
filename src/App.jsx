@@ -2,7 +2,6 @@ import "./App.css";
 import { lazy } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Layout from "./components/Layout";
-import IsLoading from "./components/IsLoading";
 
 const HomePage = lazy(() => import("./pages/Home"));
 const TopAnimePage = lazy(() => import("./pages/TopAnimePage"));
