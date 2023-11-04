@@ -12,7 +12,6 @@ const Home = () => {
   const dispatch = useDispatch();
   const loading = useSelector(isLoadingSelector);
   useEffect(() => {
-    console.log("started");
     dispatch(setTopAnime());
   }, [dispatch]);
 
