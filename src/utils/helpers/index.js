@@ -1,6 +1,4 @@
 export const validPlayerUrl = (animeTrailer) => {
-  console.log("validPlayerUrl :", animeTrailer);
-
   if (animeTrailer.promo.length !== 0)
     return animeTrailer.promo[0]?.trailer?.embed_url;
 

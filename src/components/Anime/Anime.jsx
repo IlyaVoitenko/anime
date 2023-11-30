@@ -19,7 +19,6 @@ const Anime = () => {
   const anime = useSelector(currentAnimeSelector);
   const author = useSelector(animeAuthorSelector);
   const loading = useSelector(isLoadingSelector);
-
   const { mal_id, images, title_english, synopsis, score } = anime;
 
   useEffect(() => {
